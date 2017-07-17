@@ -44,3 +44,7 @@ alias gbv='git branch -v'
 alias bs='browser-sync start --server --files "./**/*.html, ./**/*.css, ./**/*.js" --no-notify'
 # Use bsi contact.html
 alias bsi='browser-sync start --server --files "./**/*.html, ./**/*.css, ./**/*.js" --no-notify --index'
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
