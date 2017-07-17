@@ -1,0 +1,74 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'atom-text-editor':
+    'ctrl-shift-d': 'editor:duplicate-lines',
+    'ctrl-shift-up': 'editor:move-line-up',
+    'ctrl-shift-down': 'editor:move-line-down',
+    'ctrl-cmd-[': 'editor:auto-indent',
+    'ctrl-cmd-up': 'editor:add-selection-above',
+    'ctrl-cmd-down': 'editor:add-selection-below',
+    'alt-up': 'expand-region:expand',
+    'alt-down': 'expand-region:shrink',
+    # 'ctrl-alt-cmd-shift-right': 'window:focus-pane-on-right',
+    # 'ctrl-alt-cmd-shift-left': 'window:focus-pane-on-left',
+    'alt-cmd-up': 'window:focus-pane-above',
+    'alt-cmd-down': 'window:focus-pane-below',
+    'cmd-ctrl-/': 'block-comment:toggle'
+
+'atom-pane atom-text-editor:not([mini])':
+  'cmd-ctrl-/': 'emmet:toggle-comment'
+
+
+'.platform-darwin atom-text-editor:not([mini])':
+  'ctrl-shift-`': 'emmet:split-join-tag'
+
+'.editor:not(.mini)':
+  'ctrl-shift-M': 'markdown-preview:toggle'
+
+# Emmet for JSX
+'atom-text-editor[data-grammar~="jsx"]:not([mini])':
+  'tab': 'emmet:expand-abbreviation-with-tab'
+
+# Below prevents snippets from autocomplete
+# Stop emmet from hijacking basic tabbing
+'atom-text-editor[data-grammar="text html basic"]:not([mini]),
+ atom-text-editor[data-grammar~="js"]:not([mini]),
+ atom-text-editor[data-grammar~="jade"]:not([mini]),
+ atom-text-editor[data-grammar~="css"]:not([mini]),
+ atom-text-editor[data-grammar~="sass"]:not([mini])':
+  'tab': 'snippets:next-tab-stop'
+
+# Stop emmet from hijacking tab from snippets and autocomplete
+'atom-text-editor.autocomplete-active:not([mini])':
+  'tab': 'autocomplete-plus:confirm'

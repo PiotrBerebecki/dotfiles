@@ -1,0 +1,56 @@
+"*":
+  "atom-beautify":
+    css:
+      indent_size: 2
+      preserve_newlines: true
+    general:
+      analytics: false
+    html:
+      disabled: true
+      indent_size: 2
+    js:
+      indent_size: 2
+    jsx:
+      indent_size: 2
+    scss:
+      indent_size: 2
+    svg:
+      indent_size: 2
+    xml:
+      indent_size: 2
+  "atom-tag-wrapper":
+    tag: "div"
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    minimumWordLength: 2
+  "browser-refresh-on-save":
+    chromeCanary: false
+    safari: false
+    scripts: {}
+    vivaldi: false
+  core:
+    projectHome: "/Users/piotr/Remotes"
+    telemetryConsent: "no"
+  editor:
+    autoIndentOnPaste: true
+    fontFamily: "Monaco"
+    fontSize: 12
+  emmet: {}
+  "exception-reporting":
+    userId: "04618cb0-9ef5-7785-f59a-51275bffcf5c"
+  linter:
+    lintPreviewTabs: false
+  "linter-ui-default":
+    panelHeight: 300
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierEslintOptions:
+      prettierLast: true
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "es5"
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false

@@ -1,0 +1,251 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing 'snip' and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+
+# ****************************************************************************
+# import / require
+# ****************************************************************************
+'.source.js, .source.jsx':
+  'import module':
+    'prefix': 'im'
+    'body': "import ${1} from '${1}';"
+
+  'import module rename':
+    'prefix': 'imr'
+    'body': "import ${1} from '${2}';"
+
+  'import component':
+    'prefix': 'ic'
+    'body': "import ${1} from './${1}';"
+
+  'import destructured':
+    'prefix': 'id'
+    'body': "import { ${1} } from '${2}';"
+
+  'import React':
+    'prefix': 'ir'
+    'body': "import React from 'react';"
+
+  'import React, { Component }':
+    'prefix': 'irc'
+    'body': "import React, { Component } from 'react';"
+
+  'import styled':
+    'prefix': 'is'
+    'body': "import styled from 'styled-components';"
+
+  'import styled component':
+    'prefix': 'isc'
+    'body': "import { ${1} } from './../styles';"
+
+
+  'require file':
+    'prefix': 'reqf'
+    'body': '''
+    const ${1:name} = require('\./${2:path}');
+    '''
+
+  'require module':
+    'prefix': 'reqm'
+    'body': '''
+    const ${1:name} = require('${1:name}');
+    '''
+
+  'require empty':
+    'prefix': 'req'
+    'body': '''
+    const ${1:name} = require('${2:module}');
+    '''
+
+# ****************************************************************************
+# javascript
+# ****************************************************************************
+  'arrow function':
+    'prefix': 'arrow'
+    'body': "(${1}) => ${2}"
+
+
+  'preventDefault':
+    'prefix': 'prevent'
+    'body': "preventDefault();"
+
+  'template literal':
+    'prefix': 'te'
+    'body': "`${1}${${2}}`"
+
+  'template literal expression':
+    'prefix': 'tx'
+    'body': "${${1}}"
+
+  'const arrow function':
+    'prefix': 'con'
+    'body': '''
+      const ${1} = ${2} => ${3};
+      '''
+
+  'performance.now() setup':
+    'prefix': 'perf'
+    'body': '''
+      const t0 = performance.now();
+      ${1}
+      const t1 = performance.now();
+      console.log(t1 - t0, 'ms');
+      '''
+
+
+# ****************************************************************************
+# styled
+# ****************************************************************************
+  'styled props theme':
+    'prefix': 'spt'
+    'body': "${props => props.theme.${1}};"
+
+  'styled props':
+    'prefix': 'sp'
+    'body': "${props => props.${1}};"
+
+# ****************************************************************************
+# react
+# ****************************************************************************
+  'react class':
+    'prefix': 'rc'
+    'body': '''
+      import React, { Component } from 'react';
+
+      class ${1} extends Component {
+        render() {
+          return (
+            ${2}
+          );
+        }
+      }
+
+      export default ${1};
+      '''
+
+
+  'react redux':
+    'prefix': 'rr'
+    'body': '''
+      import React, { Component } from 'react';
+      import { bindActionCreators } from 'redux';
+      import { connect } from 'react-redux';
+      import { ${2} } from './../actions/index.js';
+
+      class ${1} extends Component {
+        render() {
+          return (
+            ${4}
+          );
+        }
+      }
+
+      const mapStateToProps = state => ({
+        ${3}: state.${3},
+      });
+
+      const mapDispatchToProps = dispatch => {
+        return bindActionCreators({ ${2} }, dispatch);
+      };
+
+      export default connect(mapStateToProps, mapDispatchToProps)(${1});
+      '''
+
+
+  'react fn':
+    'prefix': 'rf'
+    'body': '''
+      import React from 'react';
+
+      function ${1}() {
+        return (
+          ${2}
+        );
+      }
+
+      export default ${1};
+      '''
+
+
+  'componentDidMount':
+    'prefix': 'cdm'
+    'body': '''
+      componentDidMount() {
+        ${1}
+      }
+
+      '''
+
+
+  'react method':
+    'prefix': 'rm'
+    'body': '''
+      ${1}() {
+        ${2}
+      }
+
+      '''
+
+
+  'react snap test':
+    'prefix': 'rs'
+    'body': '''
+      import React from 'react';
+      import renderer from 'react-test-renderer';
+
+      import ${1} from './${1}';
+
+      describe('${1}', () => {
+        test('${1} renders correctly', () => {
+          const tree = renderer.create(<${1} />).toJSON();
+          expect(tree).toMatchSnapshot();
+        });
+      });
+      '''
+
+
+  'destructure state':
+    'prefix': 'ds'
+    'body': "const { ${1} } = this.state;"
+
+
+  'destructure props':
+    'prefix': 'dp'
+    'body': "const { ${1} } = this.props;"
+
+
+  'destructure':
+    'prefix': 'd'
+    'body': "const { ${1} } = ${2};"
+
+# ****************************************************************************
+# markdown
+# ****************************************************************************
+
+'.source.gfm':
+  'js markdown':
+    'prefix': 'js'
+    'body': '''
+      ```js
+      ${1}
+      ```
+      '''
