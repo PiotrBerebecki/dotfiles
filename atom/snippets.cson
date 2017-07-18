@@ -83,7 +83,6 @@
     'prefix': 'arrow'
     'body': "(${1}) => ${2}"
 
-
   'preventDefault':
     'prefix': 'prevent'
     'body': "preventDefault();"
@@ -111,6 +110,11 @@
       console.log(t1 - t0, 'ms');
       '''
 
+  'console.log':
+    'prefix': 'cl'
+    'body': '''
+      console.log(${1});
+      '''
 
 # ****************************************************************************
 # styled
