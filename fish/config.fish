@@ -27,3 +27,14 @@ set fish_user_abbreviations $fish_user_abbreviations 'gad=git add'
 set fish_user_abbreviations $fish_user_abbreviations 'gf=git fetch'
 set fish_user_abbreviations $fish_user_abbreviations 'gb=git branch'
 set fish_user_abbreviations $fish_user_abbreviations 'gm=git merge'
+
+# *********************************
+# nvm
+function nvm
+  bass export NVM_DIR='$HOME/.nvm'
+  bass source '/usr/local/opt/nvm/nvm.sh' ';' nvm $argv
+end
+
+# run nvm function
+printf 'Node '
+nvm current
