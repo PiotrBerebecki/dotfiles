@@ -1,7 +1,32 @@
-# Enable tab completion
-source ~/git-completion.bash
+# cycle through matches with tab
+bind '"\t":menu-complete'
 
-# colors!
+# Enable tab completion
+# Git branch bash completion
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+
+  # Add git completion to aliases
+  __git_complete g __git_main
+  __git_complete gch _git_checkout
+  __git_complete gm __git_merge
+fi
+
+# Make sure you actually have those aliases defined, of course.
+alias g="git"
+alias gch="git checkout"
+alias gst='git status'
+alias gch='git checkout'
+alias ch='checkout'
+alias gchm='git checkout master'
+alias gco='git commit'
+alias gad='git add'
+alias gf='git fetch'
+alias gb='git branch'
+alias gbv='git branch -v'
+alias gm="git merge"
+
+# Colors
 green="\[\033[0;32m\]"
 blue="\[\033[0;34m\]"
 purple="\[\033[0;35m\]"
@@ -13,6 +38,9 @@ export USE_EDITOR='atom'
 
 # Yarn
 export PATH="$PATH:`yarn global bin`"
+
+# Python path
+export PATH=~/Library/Python/2.7/bin/:$PATH
 
 # Change command prompt
 source ~/git-prompt.sh
@@ -26,19 +54,8 @@ export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 alias home='cd ~'
 alias remotes='cd ~/Remotes'
 
-# Git
-alias g='git'
-alias gst='git status'
-alias gch='git checkout'
-alias gchm='git checkout master'
-alias gco='git commit'
-alias gad='git add'
-alias gps='git push'
-alias gpl='git pull'
-alias gps='git ps'
-alias gb='git branch'
-alias gbv='git branch -v'
-
+# Bash
+alias reload='source ~/.bash_profile'
 
 # Packages
 alias bs='browser-sync start --server --files "./**/*.html, ./**/*.css, ./**/*.js" --no-notify'
