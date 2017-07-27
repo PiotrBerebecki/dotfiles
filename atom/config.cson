@@ -5,7 +5,7 @@
     ]
     telemetryConsent: "no"
   editor:
-    fontSize: 13
+    fontSize: 12
     tabLength: 4
   "exception-reporting":
     userId: "ac071133-fb7e-43c5-9bfd-495da6aa9950"
@@ -22,7 +22,9 @@
     prettierOptions:
       singleQuote: true
       trailingComma: "es5"
-  "tree-view": {}
+  "tree-view":
+    focusOnReveal: false
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
 
