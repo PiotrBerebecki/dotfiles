@@ -20,7 +20,7 @@ alias home 'cd ~'
 # aliases yarn
 set fish_user_abbreviations $fish_user_abbreviations 'yt=yarn test'
 set fish_user_abbreviations $fish_user_abbreviations 'yi=yarn invoke'
-set fish_user_abbreviations $fish_user_abbreviations 'yl=yarn global ls'
+set fish_user_abbreviations $fish_user_abbreviations 'yl=yarn global list'
 
 # *********************************
 # aliases node
