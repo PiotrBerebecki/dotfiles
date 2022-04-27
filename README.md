@@ -21,3 +21,5 @@ SETUVAR _fish_abbr_gst:git\x20status
 abbr -a gad git add
 abbr -a gco git commit -m
 ```
+
+* no need to define them as aliases anywhere else (e.g. `.bash_profile`, `config.fish` etc.)
